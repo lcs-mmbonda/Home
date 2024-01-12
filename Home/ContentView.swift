@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    //Stored properties
+    let firstGradientColors = Gradient(colors: [Color.blue,Color.yellow])
+    
+    //Computer properties
     var body: some View {
         ZStack{
             
             //Background
             LinearGradient(
-                gradient: /*@START_MENU_TOKEN@*/Gradient(colors: [Color.red, Color.blue])/*@END_MENU_TOKEN@*/,
-                startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/,
-                endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/
+                gradient: firstGradientColors
+                startPoint: .topTrailing,
+                endPoint: .bottomLeading
             )
             .ignoresSafeArea()
+            
+            //Foreground
             VStack {
                 Image(systemName: "globe")
                     .imageScale(.large)
